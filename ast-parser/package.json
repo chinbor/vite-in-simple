@@ -1,0 +1,30 @@
+{
+  "name": "ast-parser",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "vitest",
+    "dev": "tsup ./src/index.ts --format cjs,esm --dts --clean --watch",
+    "build": "tsup ./src/index.ts --format cjs,esm --dts --clean --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild-darwin-arm64": "^0.14.28",
+    "vitest": "^0.7.12",
+    "tsup": "^5.12.4",
+    "typescript": "^4.5.5"
+  }
+}

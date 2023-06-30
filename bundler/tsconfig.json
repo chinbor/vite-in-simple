@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "allowJs": true /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
+    "outDir": "dist" /* Specify an output folder for all emitted files. */,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "sourceMap": true,
+    "baseUrl": "src",
+    "rootDir": "src",
+    // 下面这个选项影响生成类型定义文件，需要关闭
+    "composite": false,
+    "declaration": true,
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ],
+    "paths": {
+      "*": ["./*"],
+      // 因为baseUrl为src，所以需要往上两级
+      "ast-parser": ["../../ast-parser"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["__test__"]
+}
